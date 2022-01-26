@@ -22,11 +22,11 @@
                         <div class="d-flex justify-content-between">
                             <p>
                                 <span class="font-weight-bold mr-2">サンプル名</span>
-                                <span style="font-size: 0.8rem;">{{ $tweet->created_at }}</span>
+                                <span style="font-size: 0.8rem;">YYYY年XX月DD日</span>
                             </p>
                         </div>
                         <p class="card-text">
-                            {{ $tweet->message }}
+                            メッセージメッセージ
                         </p>
                     </div>
                      <!-- ぼやき表示用カード終了 -->
