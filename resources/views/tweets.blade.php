@@ -17,21 +17,9 @@
     <div class="container mt-4">
         <div class="row justify-content-center">
             <div class="col-12 col-sm-12 col-md-10 col-lg-8">
-                    <!-- ぼやき表示用のカード 開始 -->
                     @foreach($tweets as $tweet)
-                        <div class="card card-body shadow-2 mb-2">
-                            <div class="d-flex justify-content-between">
-                                <p>
-                                    <span class="font-weight-bold mr-2">サンプル名</span>
-                                    <span style="font-size: 0.8rem;">{{ $tweet->created_at }}</span>
-                                </p>
-                            </div>
-                            <p class="card-text">
-                                {{ $tweet->message }}
-                            </p>
-                        </div>
+                        <x-tweet-card :tweet="$tweet" />
                     @endforeach
-                     <!-- ぼやき表示用カード終了 -->
             </div>
         </div>
     </div>
