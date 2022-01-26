@@ -21,3 +21,7 @@ Route::get('/hello', function () {
     return view('hello');
 });
 
+Route::get('/tweets', function () {
+    return view('tweets');
+});
+
