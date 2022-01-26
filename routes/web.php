@@ -27,8 +27,6 @@ Route::get('/tweets', function () {
     $tweet->message = 'Laravelからのメッセージ';
     $tweet->created_at = '2022/01/01 00:00';
 
-    ddd($tweet);
-
     return view('tweets', [
         'tweet' => $tweet
     ]);
