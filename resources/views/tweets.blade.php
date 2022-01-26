@@ -6,10 +6,12 @@
 
         <title>ぼやいったー | 日々のぼやきを投稿しよう</title>
 
-        <!-- MDB 用設定の読み込み TODO:後でかきかえ -->
+        <!-- Material Design for Bootstrap 読み込み 開始 -->
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
         <link rel="stylesheet" href="/css/mdb.min.css" />
         <script type="text/javascript" src="/js/mdb.min.js" defer></script>
+        <!-- Material Design for Bootstrap 読み込み 終了 -->
+
     </head>
     <body class="font-sans antialiased bg-light">
     <div class="container mt-4">
