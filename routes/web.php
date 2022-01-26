@@ -22,13 +22,6 @@ Route::get('/hello', function () {
 });
 
 Route::get('/tweets', function () {
-
-    $tweet = new stdClass(); // オブジェクトを作成
-    $tweet->message = 'Laravelからのメッセージ';
-    $tweet->created_at = '2022/01/01 00:00';
-
-    return view('tweets', [
-        'tweet' => $tweet
-    ]);
+    return view('tweets');
 });
 
