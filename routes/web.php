@@ -27,8 +27,14 @@ Route::get('/tweets', function () {
     $tweet->message = 'Laravelからのメッセージ';
     $tweet->created_at = '2022/01/01 00:00';
 
+    $tweet2 = new stdClass(); // オブジェクトを作成
+    $tweet2->message = 'Laravelからのメッセージ その2';
+    $tweet2->created_at = '2022/01/01 00:00';
+
+    $tweets = [$tweet, $tweet2]; // オブジェクトの配列を作成
+
     return view('tweets', [
-        'tweet' => $tweet
+        'tweets' => $tweets
     ]);
 });
 
