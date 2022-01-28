@@ -15,7 +15,6 @@ class TweetController extends Controller
     public function index()
     {
         $tweets = Tweet::all(); // tweetsデータベースの中身を全件取得
-        ddd($tweets);
     
         return view('tweets', [
             'tweets' => $tweets
