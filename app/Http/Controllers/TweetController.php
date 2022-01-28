@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Tweet;
 
 class TweetController extends Controller
 {
@@ -13,15 +14,8 @@ class TweetController extends Controller
      */
     public function index()
     {
-        $tweet = new \stdClass(); // namespace がついているので stdClass() を \stdClass() に変更する
-        $tweet->message = 'Laravelからのメッセージ';
-        $tweet->created_at = '2022/01/01 00:00';
-    
-        $tweet2 = new \stdClass(); // namespace がついているので stdClass() を \stdClass() に変更する
-        $tweet2->message = 'Laravelからのメッセージ その2';
-        $tweet2->created_at = '2022/01/01 00:00';
-    
-        $tweets = [$tweet, $tweet2]; // オブジェクトの配列を作成
+        $tweets = Tweet::all(); // tweetsデータベースの中身を全件取得
+        ddd($tweets);
     
         return view('tweets', [
             'tweets' => $tweets
