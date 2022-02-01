@@ -11,6 +11,7 @@ class Tweet extends Model
 
     protected $fillable = [
         'message',
+        'user_id'
     ];
 
     public function user()

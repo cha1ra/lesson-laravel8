@@ -43,7 +43,8 @@ class TweetController extends Controller
     public function store(Request $request)
     {
         $tweet = Tweet::create([
-            'message' => $request->message
+            'message' => $request->message,
+            'user_id' => auth()->user()->id
         ]); // データを新規作成
         return redirect()->route('tweets.index');
     }
