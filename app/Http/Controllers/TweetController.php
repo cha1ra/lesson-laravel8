@@ -46,6 +46,7 @@ class TweetController extends Controller
             'message' => $request->message,
             'user_id' => auth()->user()->id
         ]); // データを新規作成
+        $tweet->tags()->attach($request->tags);
         return redirect()->route('tweets.index');
     }
 
