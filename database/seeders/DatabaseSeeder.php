@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use App\Models\Tweet;
+use App\Models\Tag;
 
 class DatabaseSeeder extends Seeder
 {
@@ -16,6 +17,18 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // \App\Models\User::factory(10)->create();
+        
+        Tag::create([
+            'name' => 'ライフハック'
+        ]);
+
+        Tag::create([
+            'name' => 'エッセイ'
+        ]);
+
+        Tag::create([
+            'name' => 'お知らせ'
+        ]);
 
         User::create([
             'name' => 'テストユーザ',
@@ -38,5 +51,7 @@ class DatabaseSeeder extends Seeder
             'message' => 'ぼやき太郎による投稿',
             'user_id' => 2
         ]);
+
+
     }
 }
