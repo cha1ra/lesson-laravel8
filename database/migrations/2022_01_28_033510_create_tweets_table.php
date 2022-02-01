@@ -16,6 +16,7 @@ class CreateTweetsTable extends Migration
         Schema::create('tweets', function (Blueprint $table) {
             $table->id(); // Auto Increment の id カラムを作ってくれる
             $table->string('message'); // VARCHAR(255) が作成される
+            $table->foreignId('user_id')->constrained(); // 外部キー制約を作成
             $table->timestamps(); // created_at と updated_at カラムを作ってくれる
         });
     }
