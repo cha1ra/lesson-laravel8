@@ -39,7 +39,10 @@ class TweetController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $tweet = Tweet::create([
+            'message' => $request->message
+        ]); // データを新規作成
+        return redirect()->route('tweets.index');
     }
 
     /**
