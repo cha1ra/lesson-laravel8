@@ -20,6 +20,8 @@ Route::get('/', function () {
 
 Route::group(['middleware' => ['auth']], function() {
     Route::get('/tweets', [TweetController::class, 'index'])->name('tweets.index');
+    Route::post('/tweets', [TweetController::class, 'store'])->name('tweets.store');
+
 });
 
 require __DIR__.'/auth.php';
