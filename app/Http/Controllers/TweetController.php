@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Tweet;
+use App\Models\Tag;
 
 class TweetController extends Controller
 {
@@ -15,9 +16,11 @@ class TweetController extends Controller
     public function index()
     {
         $tweets = Tweet::all(); // tweetsデータベースの中身を全件取得
+        $tags = Tag::all();
     
         return view('tweets', [
-            'tweets' => $tweets
+            'tweets' => $tweets,
+            'tags' => $tags
         ]);
     }
 
