@@ -7,12 +7,6 @@
 
         <title>ぼやいったー | 日々のぼやきを投稿しよう</title>
 
-        <!-- Material Design for Bootstrap 読み込み 開始 -->
-        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
-        <link rel="stylesheet" href="/css/mdb.min.css" />
-        <script type="text/javascript" src="/js/mdb.min.js" defer></script>
-        <!-- Material Design for Bootstrap 読み込み 終了 -->
-
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap">
 
@@ -21,6 +15,13 @@
 
         <!-- Scripts -->
         <script src="{{ asset('js/app.js') }}" defer></script>
+
+        <!-- Material Design for Bootstrap 読み込み 開始 -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+        <link rel="stylesheet" href="/css/mdb.min.css" />
+        <script type="text/javascript" src="/js/mdb.min.js" defer></script>
+        <!-- Material Design for Bootstrap 読み込み 終了 -->
+
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
