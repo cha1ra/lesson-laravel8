@@ -8,4 +8,9 @@
     <p class="card-text">
         {{ $tweet->message }}
     </p>
+    <div>
+        @foreach($tweet->tags as $tag)
+            <span class="badge badge-pill badge-primary">{{$tag->name}}</span>
+        @endforeach
+    </div>
 </div>
