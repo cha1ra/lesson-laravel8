@@ -117,5 +117,11 @@ class TweetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function destroy(Tweet $tweet)
+    {
+        $tweet->tags()->detach();
+        $tweet->delete();
+        return redirect()->route('tweets.index');
+    }
 
 }
