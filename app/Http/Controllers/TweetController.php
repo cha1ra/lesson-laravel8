@@ -15,13 +15,18 @@ class TweetController extends Controller
      */
     public function index()
     {
-        $tweets = Tweet::with(['user','tags'])->get(); // イーガーロードを使ってデータ取得
+        $tweets = Tweet::with(['user','tags'])->orderBy('created_at', 'desc')->get();
         $tags = Tag::all();
     
         return view('tweets', [
             'tweets' => $tweets,
             'tags' => $tags
         ]);
+    }
+
+    public function search(Request $request)
+    {
+        ddd($request->keyword); // 一旦開通確認をするため ddd()を表示させる
     }
 
     /**
