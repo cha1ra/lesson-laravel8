@@ -31,9 +31,11 @@ class TweetController extends Controller
 
         // キーワード情報を基にツイートを取得
         $tweets = Tweet::where('message', 'LIKE', '%'.$keyword.'%')->get();
-        
-        // ddd()で表示
-        ddd($tweets);
+
+        return view('search', [
+            'tweets' => $tweets,
+            'keyword' => $keyword
+        ]);
     }
 
     /**
