@@ -15,7 +15,7 @@ class TweetController extends Controller
      */
     public function index()
     {
-        $tweets = Tweet::all(); // tweetsデータベースの中身を全件取得
+        $tweets = Tweet::with(['user','tags'])->get(); // イーガーロードを使ってデータ取得
         $tags = Tag::all();
     
         return view('tweets', [
