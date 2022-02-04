@@ -102,9 +102,13 @@ class TweetController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Tweet $tweet)
     {
-        //
+        $tweet->update([
+            'message' => $request->message,
+        ]);
+        $tweet->tags()->sync($request->tags);
+        return redirect()->route('tweets.index');
     }
 
     /**
