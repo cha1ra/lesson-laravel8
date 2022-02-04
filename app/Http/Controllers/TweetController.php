@@ -26,7 +26,14 @@ class TweetController extends Controller
 
     public function search(Request $request)
     {
-        ddd($request->keyword); // 一旦開通確認をするため ddd()を表示させる
+        // キーワードを取得
+        $keyword = $request->keyword;
+
+        // キーワード情報を基にツイートを取得
+        $tweets = Tweet::where('message', 'LIKE', '%'.$keyword.'%')->get();
+        
+        // ddd()で表示
+        ddd($tweets);
     }
 
     /**
