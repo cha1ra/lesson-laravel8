@@ -30,7 +30,10 @@ class TweetController extends Controller
         $keyword = $request->keyword;
 
         // キーワード情報を基にツイートを取得
-        $tweets = Tweet::where('message', 'LIKE', '%'.$keyword.'%')->get();
+        $tweets = Tweet::with(['user', 'tags']) // 追記
+            ->where('message', 'LIKE', '%'.$keyword.'%')
+            ->orderBy('created_at', 'desc') // 追記
+            ->get();
 
         return view('search', [
             'tweets' => $tweets,
