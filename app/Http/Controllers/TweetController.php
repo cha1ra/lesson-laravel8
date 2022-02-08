@@ -86,6 +86,7 @@ class TweetController extends Controller
      */
     public function edit(Tweet $tweet)
     {
+        $this->authorize('update', $tweet);
         $tags = Tag::all();
         $selectedTags = $tweet->tags->pluck('id')->toArray();
         return view('edit', [
@@ -104,6 +105,7 @@ class TweetController extends Controller
      */
     public function update(Request $request, Tweet $tweet)
     {
+        $this->authorize('update', $tweet);
         $tweet->update([
             'message' => $request->message,
         ]);
@@ -119,6 +121,7 @@ class TweetController extends Controller
      */
     public function destroy(Tweet $tweet)
     {
+        $this->authorize('delete', $tweet);
         $tweet->tags()->detach();
         $tweet->delete();
         return redirect()->route('tweets.index');
