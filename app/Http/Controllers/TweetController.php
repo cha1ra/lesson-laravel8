@@ -26,6 +26,10 @@ class TweetController extends Controller
 
     public function search(Request $request)
     {
+        if(!$request->has('keyword')) {
+            return redirect('/tweets');
+        }
+
         // キーワードを取得
         $keyword = $request->keyword;
 
