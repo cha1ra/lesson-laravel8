@@ -8,8 +8,11 @@
                         <div class="mb-2">
                             <p class="mb-1 text-gray-400 font-weight-bold" style="font-size: 0.8rem;">ぼやいったー</p>
                             <div class="form-outline">
-                                <textarea class="form-control" id="text-area" rows="3" name="message" placeholder="ぼやきを入力"></textarea>
+                                <textarea class="form-control" id="text-area" rows="3" name="message" placeholder="ぼやきを入力">{{old('message')}}</textarea>
                             </div>
+                            @error('message')
+                                <div class="form-helper text-danger">{{$message}}</div>
+                            @enderror
                         </div>
                         <!-- タグづけ用選択チェックボックス ここから -->
                         <div class="mb-2">
